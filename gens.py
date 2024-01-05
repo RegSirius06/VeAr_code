@@ -15,12 +15,10 @@ def three_n_plus_one(i: int): return i // 2 if i & 1 == 0 else 3 * i + 1
 
 
 def gen_shift(length: int, seed: int) -> list:
-    rs = []
     x = seed
     for i in range(length):
-        rs.append(x)
+        yield x
         x = three_n_plus_one(x)
         if x == 4:
             x = seed + 1
             seed += 1
-    return rs

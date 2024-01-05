@@ -11,7 +11,7 @@ def run():
 
     digit = int(''.join(messagelist[:2]) + ''.join(messagelist[-2:]))
     messagelist = messagelist[2:-2]
-    shift = gens.gen_shift(len(messagelist), digit)
+    shift = [*gens.gen_shift(len(messagelist), digit)]
 
     for i in range(len(messagelist)):
         messagelist[i] = Alfabet[(Key.find(messagelist[i]) - shift[i]) % len(Alfabet)]

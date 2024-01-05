@@ -11,7 +11,7 @@ def run():
     messagelist = [x.lower() for x in message if x.isalpha()]
 
     digit = random.randint(1000, 9999)
-    shift = gens.gen_shift(len(messagelist), digit)
+    shift = [*gens.gen_shift(len(messagelist), digit)]
 
     for i in range(len(messagelist)):
         messagelist[i] = Key[(Alfabet.find(messagelist[i]) + shift[i]) % len(Key)]
